@@ -1,0 +1,49 @@
+{
+  "builders": [{
+    "type": "vmware-iso",
+    "communicator": "winrm",
+    "boot_wait": "5m",
+    "disk_size": 61440,
+    "floppy_files": [
+      "autounattend.xml",
+	  "SetupComplete.cmd",
+      "configure-winrm.ps1"
+    ],
+    "guest_os_type": "windows8srv-64",
+    "headless": true,
+    "iso_url": "en_windows_server_2012_r2_x64_dvd_2707946.iso",
+    "iso_checksum_type": "none",
+    "winrm_username": "vagrant",
+    "winrm_password": "vagrant",    
+
+    "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
+    "skip_compaction": false,
+    "vmx_data": {
+      "gui.fitguestusingnativedisplayresolution": "FALSE",
+      "memsize": "1024",
+      "numvcpus": "4",
+      "virtualHW.version": "8",
+      "scsi0.virtualDev": "lsisas1068",
+      "ethernet0.present": "TRUE",
+      "ethernet0.startConnected": "TRUE",
+      "ethernet0.virtualDev": "e1000",
+      "ethernet0.networkName": "Manchester SCADA Network 2010",
+      "ethernet0.addressType": "generated",
+      "ethernet0.generatedAddressOffset": "0",
+      "ethernet0.wakeOnPcktRcv": "FALSE"
+    }
+  }],
+  "provisioners": [{
+    "type": "powershell",
+    "scripts": [
+      "install-vmware-tools.ps1"
+    ]
+    }],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": false,
+      "output": "{{.Provider}}_windows-2012r2_chef-11.12.4.box"
+    }
+  ]
+} 

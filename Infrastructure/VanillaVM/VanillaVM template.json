@@ -11,7 +11,7 @@
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,
-    "iso_url": "en_windows_server_2012_r2_x64_dvd_2707946.iso",
+    "iso_url": "http://download.msdn.microsoft.com/db/en_windows_server_2012_r2_with_update_x64_dvd_6052708.iso?t=0fe305b0-c754-479d-a836-e63741c51ca3&e=1454540276&h=8ed4de99b7a8f8a74625696085180161",
     "iso_checksum_type": "none",
     "winrm_username": "vagrant",
     "winrm_password": "vagrant",    

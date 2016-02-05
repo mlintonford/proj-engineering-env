@@ -2,7 +2,7 @@
   "builders": [{
     "type": "vmware-iso",
     "communicator": "winrm",
-    "boot_wait": "5m",
+    "boot_wait": "15m",
     "disk_size": 61440,
     "floppy_files": [
       "autounattend.xml",
@@ -10,40 +10,33 @@
       "configure-winrm.ps1"
     ],
     "guest_os_type": "windows8srv-64",
-    "headless": true,
-    "iso_url": "http://download.msdn.microsoft.com/db/en_windows_server_2012_r2_with_update_x64_dvd_6052708.iso?t=0fe305b0-c754-479d-a836-e63741c51ca3&e=1454540276&h=8ed4de99b7a8f8a74625696085180161",
+    "headless": false,
+    "iso_url": "http://download.msdn.microsoft.com/db/en_windows_server_2012_r2_vl_with_update_x64_dvd_6052766.iso?t=235f0fb1-6f7d-440b-babb-ae6e705a8249&e=1454688131&h=8a39da238986f97b8e84a2d57a93e8f9",
     "iso_checksum_type": "none",
-    "winrm_username": "vagrant",
-    "winrm_password": "vagrant",    
-
+    "winrm_username": "Administrator", 
+	"winrm_password": "Telent2016",
     "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
     "skip_compaction": false,
     "vmx_data": {
       "gui.fitguestusingnativedisplayresolution": "FALSE",
-      "memsize": "1024",
+      "memsize": "4096",
       "numvcpus": "4",
       "virtualHW.version": "8",
       "scsi0.virtualDev": "lsisas1068",
       "ethernet0.present": "TRUE",
       "ethernet0.startConnected": "TRUE",
       "ethernet0.virtualDev": "e1000",
-      "ethernet0.networkName": "Manchester SCADA Network 2010",
+      "ethernet0.networkName": "HostOnly",
       "ethernet0.addressType": "generated",
       "ethernet0.generatedAddressOffset": "0",
       "ethernet0.wakeOnPcktRcv": "FALSE"
     }
   }],
-  "provisioners": [{
-    "type": "powershell",
-    "scripts": [
-      "install-vmware-tools.ps1"
-    ]
-    }],
   "post-processors": [
     {
       "type": "vagrant",
       "keep_input_artifact": false,
-      "output": "{{.Provider}}_windows-2012r2_chef-11.12.4.box"
+      "output": "{{.Provider}}_windows-2012r2.box"
     }
   ]
 } 

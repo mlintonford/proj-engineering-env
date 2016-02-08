@@ -5,9 +5,7 @@
     "boot_wait": "15m",
     "disk_size": 14000,
     "floppy_files": [
-      "autounattend.xml",
-	  "SetupComplete.cmd",
-      "configure-winrm.ps1"
+      "Autounattend.xml"
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,

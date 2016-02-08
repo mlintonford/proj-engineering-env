@@ -1,6 +1,10 @@
 mkdir C:\v1
 echo "---Set Execution Policy 64 Bit---" > C:\v1\log.txt
 cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force" >> C:/v1/log.txt
+echo "---Set-Item WSMan:\localhost\Service\AllowUnencrypted -Value True---" > C:\v1\log.txt
+powershell.exe -noprofile -command "&Set-Item WSMan:\localhost\Service\AllowUnencrypted -Value True" >> C:\v1\log.txt
+echo "---Set-Item WSMan:\localhost\Service\Auth\Basic -Value True---" > C:\v1\log.txt
+powershell.exe -noprofile -command "&Set-Item WSMan:\localhost\Service\Auth\Basic -Value True" >> C:\v1\log.txt
 echo "---Set Execution Policy 32 Bit---" >> C:/v1/log.txt
 %SystemRoot%\SysWOW64\cmd.exe /c powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Force" >> C:/v1/log.txt
 echo "---Show file extensions in Explorer---" >> C:/v1/log.txt

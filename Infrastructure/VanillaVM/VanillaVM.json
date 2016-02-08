@@ -10,7 +10,7 @@
       "configure-winrm.ps1"
     ],
     "guest_os_type": "windows8srv-64",
-    "headless": false,
+    "headless": true,
     "iso_url": "http://download.msdn.microsoft.com/db/en_windows_server_2012_r2_vl_with_update_x64_dvd_6052766.iso?t=235f0fb1-6f7d-440b-babb-ae6e705a8249&e=1454688131&h=8a39da238986f97b8e84a2d57a93e8f9",
     "iso_checksum_type": "none",
     "winrm_username": "Administrator", 

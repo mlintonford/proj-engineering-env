@@ -25,7 +25,7 @@
       "ethernet0.startConnected": "TRUE",
       "ethernet0.virtualDev": "e1000",
 	  "ethernet0.connectionType": "custom",
-	  "ethernet0.vnet": "vmnet0",
+	  "ethernet0.vnet": "vmnet8",
       "ethernet0.addressType": "generated",
       "ethernet0.generatedAddressOffset": "0",
       "ethernet0.wakeOnPcktRcv": "FALSE"

@@ -2,7 +2,7 @@
   "builders": [{
     "type": "vmware-iso",
     "communicator": "winrm",
-    "boot_wait": "60m",
+    "boot_wait": "15m",
     "disk_size": 14000,
     "floppy_files": [
       "Autounattend.xml"

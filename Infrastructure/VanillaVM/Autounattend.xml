@@ -49,7 +49,7 @@
                 <OSImage>
                     <InstallFrom>
                         <MetaData wcm:action="add">
-                            <Key>/IMAGE/INDEX </Key>
+                            <Key>/IMAGE/INDEX</Key>
                             <Value>2</Value>
                         </MetaData>
                     </InstallFrom>

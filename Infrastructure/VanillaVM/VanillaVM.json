@@ -3,7 +3,7 @@
     "type": "vmware-iso",
     "communicator": "winrm",
     "boot_wait": "5m",
-    "disk_size": 8000,
+    "disk_size": 14000,
     "floppy_files": [
       "Autounattend.xml"
     ],

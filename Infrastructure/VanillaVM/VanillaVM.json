@@ -4,6 +4,7 @@
     "communicator": "winrm",
     "boot_wait": "5m",
     "disk_size": 14000,
+    "disk_type_id": "thin",
     "floppy_files": [
       "Autounattend.xml"
     ],

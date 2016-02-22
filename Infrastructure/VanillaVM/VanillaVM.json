@@ -34,4 +34,4 @@
       "output": "{{.Provider}}_windows-2012r2.box"
     }
   ]
-} 
+}  

@@ -2,14 +2,14 @@
   "builders": [{
     "type": "vmware-iso",
     "communicator": "winrm",
-    "boot_wait": "10m",
+    "boot_wait": "15m",
     "disk_size": 11500,
     "disk_type_id": "0",
     "floppy_files": [
       "Autounattend.xml",
 	  "provision.ps1"
     ],
-    "guest_os_type": "windows8srv-64",
+    "guest_os_type": "Windows2012_64",
     "headless": true,
     "iso_url": "http://care.dlservice.microsoft.com/dl/download/6/2/A/62A76ABB-9990-4EFC-A4FE-C7D698DAEB96/9600.17050.WINBLUE_REFRESH.140317-1640_X64FRE_SERVER_EVAL_EN-US-IR3_SSS_X64FREE_EN-US_DV9.iso",
     "iso_checksum_type": "none",
@@ -17,7 +17,7 @@
 	"winrm_password": "Telent2016",
 	"winrm_timeout": "8h",
     "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
-    "skip_compaction": false,
+    "skip_compaction": true,
     "vmx_data": {
       "gui.fitguestusingnativedisplayresolution": "FALSE",
       "memsize": "1024",
@@ -29,9 +29,13 @@
   }],
   "post-processors": [
     {
-      "type": "vagrant",
-      "keep_input_artifact": false,
-      "output": "{{.Provider}}_windows-2012r2.box"
+		"type": "atlas",
+        "token": "{{user `atlas_token`}}",
+        "artifact": "mmlfvs/VanillaVM",
+        "artifact_type": "vmware.image",
+        "metadata": {
+          "created_at": "{{timestamp}}"
+        }
     }
   ]
 } 

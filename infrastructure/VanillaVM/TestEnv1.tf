@@ -1,3 +1,16 @@
+variable "vsphere_user" {
+    type = "string"
+	default="user"
+}
+variable "vsphere_password" {
+    type = "string"
+	default="password"
+}
+variable "vsphere_server" {
+    type = "string"
+	default="137.221.104.112"
+}
+
 # Configure the VMware vSphere Provider
 provider "vsphere" {
   user           = "${var.vsphere_user}"
@@ -6,7 +19,7 @@ provider "vsphere" {
 }
 
 # Create a folder
-resource "vsphere_folder" "frontend" {
+resource "vsphere_folder" "Panorama" {
   path = "frontend"
 }
 

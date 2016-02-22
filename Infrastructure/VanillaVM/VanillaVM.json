@@ -2,11 +2,12 @@
   "builders": [{
     "type": "vmware-iso",
     "communicator": "winrm",
-    "boot_wait": "5m",
+    "boot_wait": "10m",
     "disk_size": 11500,
     "disk_type_id": "0",
     "floppy_files": [
-      "Autounattend.xml"
+      "Autounattend.xml",
+	  "provision.ps1"
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,
@@ -14,8 +15,9 @@
     "iso_checksum_type": "none",
     "winrm_username": "Administrator", 
 	"winrm_password": "Telent2016",
+	"winrm_timeout": "8h",
     "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
-    "skip_compaction": true,
+    "skip_compaction": false,
     "vmx_data": {
       "gui.fitguestusingnativedisplayresolution": "FALSE",
       "memsize": "1024",

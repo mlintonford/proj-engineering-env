@@ -21,7 +21,7 @@ Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
 
 @(
     "$env:localappdata\Nuget",
-    "$env:localappdata\temp\*",
+    "$env:localappdata\temp\*", 
     "$env:windir\logs",
     "$env:windir\panther",
     "$env:windir\temp\*",

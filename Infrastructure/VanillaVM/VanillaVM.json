@@ -17,7 +17,7 @@
 	"winrm_password": "Telent2016",
 	"winrm_timeout": "8h",
     "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
-    "skip_compaction": true,
+    "skip_compaction": false, 
     "vmx_data": {
       "gui.fitguestusingnativedisplayresolution": "FALSE",
       "memsize": "1024",
@@ -30,7 +30,7 @@
   "post-processors": [
     {
 		"type": "atlas",
-        "token": "{{user `atlas_token`}}",
+        "token": "OdZOxhvNyMd5fg.atlasv1.5Qrl2SQSXmCT4C1k6vyTQ3xbW9To3AIe7kyxfl2Rpqjg1Eyftj4tbQdPP6p03RrGugs",
         "artifact": "mmlfvs/VanillaVM",
         "artifact_type": "vmware.image",
         "metadata": {

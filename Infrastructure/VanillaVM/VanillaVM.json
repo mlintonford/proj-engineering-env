@@ -17,7 +17,7 @@
 	"winrm_password": "Telent2016",
 	"winrm_timeout": "8h",
     "shutdown_command": "shutdown /s /t 20 /c \"Packer Shutdown\" /f /d p:4:1",
-    "skip_compaction": false,
+    "skip_compaction": true,
     "vmx_data": {
       "gui.fitguestusingnativedisplayresolution": "FALSE",
       "memsize": "1024",

@@ -26,5 +26,12 @@
       "ethernet0.present": "TRUE",
       "ethernet0.startConnected": "TRUE"
     }
-  }]
+  }],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": false,
+      "output": "{{.Provider}}_windows-2012r2.box"
+    }
+  ]
 } 

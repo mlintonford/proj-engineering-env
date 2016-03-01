@@ -8,6 +8,7 @@
     "floppy_files": [
       "Autounattend.xml",
 	  "provision.ps1"
+	  "install-vmware-tools.ps1"
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,
@@ -28,14 +29,10 @@
     }
   }],
     "post-processors": [
-      {
-        "type": "atlas",
-        "token": "OdZOxhvNyMd5fg.atlasv1.5Qrl2SQSXmCT4C1k6vyTQ3xbW9To3AIe7kyxfl2Rpqjg1Eyftj4tbQdPP6p03RrGugs",
-        "artifact": "mmlfvs/VanillaVM",
-        "artifact_type": "vmware.image",
-        "metadata": {
-          "created_at": "{{timestamp}}"
-        }
-      }
-    ]
+    {
+      "type": "vmware-iso",
+      "keep_input_artifact": true,
+      "output": "{{.Provider}}_windows-2012r2.box"
+    }
+  ]
 } 

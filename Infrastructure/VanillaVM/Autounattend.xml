@@ -168,6 +168,10 @@
                     <Order>16</Order>
                     <Path>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\provision.ps1</Path>
                 </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>17</Order>
+                    <Path>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\install-vmware-tools.ps1</Path>
+                </RunSynchronousCommand>
             </RunSynchronous>
         </component>
     </settings>
@@ -195,6 +199,18 @@
                     <Value>Telent2016</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
+				<LocalAccounts>
+                    <LocalAccount wcm:action="add">
+                        <Password>
+                            <Value>vagrant</Value>
+                            <PlainText>true</PlainText>
+                        </Password>
+                        <Description>Vagrant User</Description>
+                        <DisplayName>vagrant</DisplayName>
+                        <Group>administrators</Group>
+                        <Name>vagrant</Name>
+                    </LocalAccount>
+                </LocalAccounts>
             </UserAccounts>
             <RegisteredOwner />
             <TimeZone>Greenwich Mean Time</TimeZone>

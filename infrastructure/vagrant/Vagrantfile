@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+	config.vm.guest = :windows
+	config.vm.box = "vmware_windows-2012r2.box"
+	config.vm.box_url = "http://137.221.129.138/guestAuth/repository/download/Infrastructure_VanillaVM_VanillaVM/14901:id/vmware_windows-2012r2.box"
+	config.vm.communicator = "winrm"
+	config.winrm.username = "Administrator"
+	config.winrm.password = "Telent2016"
+	config.vm.boot_timeout = 1200
+	config.vm.provision "shell", inline: "'hello' | Out-File C:\log.log"
+	config.vm.provision "shell", inline: "Set-NetworkAdapterIPAddress Ethernet -IPAddress 192.168.190.200 -Subnet 255.255.255.0"
+end

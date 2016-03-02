@@ -8,7 +8,6 @@
     "floppy_files": [
       "Autounattend.xml",
 	  "provision.ps1"
-	  "install-vmware-tools.ps1"
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,
@@ -30,7 +29,7 @@
   }],
     "post-processors": [
     {
-      "type": "vmware-iso",
+      "type": "vagrant",
       "keep_input_artifact": true,
       "output": "{{.Provider}}_windows-2012r2.box"
     }

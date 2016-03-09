@@ -7,7 +7,8 @@
     "disk_type_id": "0",
     "floppy_files": [
       "Autounattend.xml",
-	  "provision.ps1"
+	  "provision.ps1",
+	  "install-vmware-tools.ps1"
     ],
     "guest_os_type": "windows8srv-64",
     "headless": true,
@@ -32,10 +33,6 @@
       "type": "vagrant",
       "keep_input_artifact": false,
       "output": "{{.Provider}}_windows-2012r2.box"
-	  "metadata": {
-		"provider": "vmware_desktop",
-		"version": "0.0.0.0"
-	  }
     }
   ]
 } 

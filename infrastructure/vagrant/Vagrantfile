@@ -8,7 +8,11 @@ Vagrant.configure(2) do |config|
 	config.vm.communicator = "winrm"
 	config.winrm.username = "Administrator"
 	config.winrm.password = "Telent2016"
-	config.vm.boot_timeout = 1200
+	config.winrm.hostname = "localhost"
+	
+	config.vm.network :forwarded_port, guest: 5985, host: 5985, id: "winrm", auto_correct: true
+    config.vm.network :forwarded_port, guest: 3389, host: 3389, id: "rdp", auto_correct: true
+	
 	config.vm.provision "shell", inline: "'hello' | Out-File C:\log.log"
 	config.vm.provision "shell", inline: "Set-NetworkAdapterIPAddress Ethernet -IPAddress 192.168.190.200 -Subnet 255.255.255.0"
 end

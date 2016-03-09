@@ -168,6 +168,10 @@
                     <Order>16</Order>
                     <Path>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\provision.ps1</Path>
                 </RunSynchronousCommand>
+				<RunSynchronousCommand wcm:action="add">
+                    <Order>17</Order> 
+                    <Path>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\install-vmware-tools.ps1</Path>
+                </RunSynchronousCommand>
             </RunSynchronous>
         </component>
     </settings>

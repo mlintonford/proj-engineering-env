@@ -1,0 +1,16 @@
+{
+  "name": "vmware_windows-2012r2.box",
+  "description": "This box contains Windows Server 2012 R2 64-bit - Evaluation Edition",
+  "versions": [
+    {
+      "version": "0.1.0",
+      "providers": [
+        {
+          "name": "vmware_desktop",
+          "url": "file:///C:/proj-engineering-env/Infrastructure/VanillaVM/vmware_windows-2012r2.box",
+          "checksum_type": "none"
+        }
+      ]
+    }
+  ]
+}

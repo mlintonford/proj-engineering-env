@@ -1,24 +1,42 @@
 {
+	"variables": {
+    "ssh_name": "vagrant",
+    "ssh_pass": "vagrant",
+    "hostname": "gitlabServer"
+  },
   "builders": [{
     "type": "vmware-iso",
-	"guest_os_type": "Ubuntu-64",
+	"guest_os_type": "ubuntu-64",
 	"boot_command": [
-      "<esc><f6><esc> file=floppy:/preseed.cfg vga=788 ks=floppy:/ks.cfg initrd=/install/initrd.gz quiet -- <enter>"
-    ],
-    "boot_wait": "6s",
-    "boot_wait": "35m",
+		"<esc><esc><enter><wait>",
+		"/install/vmlinuz noapic ",
+		"preseed/file=/media/preseed.cfg ",
+		"ks=/media/ks.cfg ",
+		"debian-installer=en_GB ",
+		"auto locale=en_GB ",
+		"kbd-chooser/method=us ",
+		"hostname={{user `hostname`}} ",
+		"fb=false debconf/frontend=noninteractive ",
+		"keyboard-configuration/modelcode=SKIP ",
+		"keyboard-configuration/layout=UK ",
+        "keyboard-configuration/variant=UK ",
+		"console-setup/ask_detect=false ",
+		"initrd=/install/initrd.gz  -- <enter>"
+	],
+    "boot_wait": "30s",
     "disk_size": 11500,
     "disk_type_id": "0",
     "floppy_files": [
       "ks.cfg",
 	  "preseed.cfg"
     ],
-    "headless": true,
+    "headless": false,
     "iso_url": "http://releases.ubuntu.com/14.04.4/ubuntu-14.04.4-server-amd64.iso",
-    "iso_checksum_type": "none",
+    "iso_checksum_type": "md5",
+	"iso_checksum" : "2ac1f3e0de626e54d05065d6f549fa3a",
     "ssh_username": "vagrant", 
 	"ssh_password": "vagrant",
-	"ssh_wait_timeout": "6m", 
+	"ssh_wait_timeout": "60m", 
     "shutdown_command": "echo {{user `ssh_pass`}} | sudo -S shutdown -P now",
     "skip_compaction": false, 
     "vmx_data": {

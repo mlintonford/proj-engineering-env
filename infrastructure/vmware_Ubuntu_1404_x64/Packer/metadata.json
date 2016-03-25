@@ -1,0 +1,16 @@
+{
+  "name": "vmware_Ubuntu_14.04_x64.box",
+  "description": "This box contains Canonical Ubuntu 14.04 LTS 64-bit.",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "providers": [
+        {
+          "name": "vmware_desktop",
+          "url": "file://C:/Projects/trunk/Operations/Infrastructure/vmware_Ubuntu_1404_x64/Packer/vmware_Ubuntu_14.04_x64.box",
+          "checksum_type": "none"
+        }
+      ]
+    }
+  ]
+}
